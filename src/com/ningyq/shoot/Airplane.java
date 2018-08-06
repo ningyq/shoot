@@ -20,11 +20,16 @@ public class Airplane extends FlyingObject implements Enemy {
     }
 
     public int getScore() {
-        return 0;
+        return 5;
     }
 
     @Override
-    public void step() {
+    public void step() {  //移动
         y += speed;
+    }
+
+    @Override
+    public boolean outOFBounds() {   //越界处理
+        return y > ShootGame.HEIGHT;
     }
 }
