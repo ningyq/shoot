@@ -53,4 +53,24 @@ public abstract class FlyingObject {
      * 飞行物移动一步
      */
     public abstract void step();
+
+    /**
+     * 检查当前飞行物体是否被（x，y）击中（shoot）
+     * true表示击中，飞行物可以被击中
+     * @param bullet 子弹对象
+     * @return true 表示被击中
+     */
+    public boolean shootBy(Bullet bullet) {
+        int x = bullet.x;   //子弹横坐标
+        int y = bullet.y;   //子弹纵坐标
+        return this.x < x && x < this.x + width && this.y < y && y < this.y + height;
+    }
+
+    /**
+     * 检查是否出界
+     * @param width    边界宽
+     * @param height   边界高
+     * @return true   是否出界
+     */
+    public abstract boolean outOFBounds();
 }

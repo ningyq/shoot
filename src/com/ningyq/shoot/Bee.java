@@ -20,7 +20,7 @@ public class Bee extends FlyingObject implements Award {
     }
 
     public int getType() {
-        return 0;
+        return awardType;
     }
 
     @Override
@@ -33,5 +33,10 @@ public class Bee extends FlyingObject implements Award {
         if (x < 0) {
             xSpeed = 1;
         }
+    }
+
+    @Override
+    public boolean outOFBounds() {
+        return y > ShootGame.HEIGHT;
     }
 }
