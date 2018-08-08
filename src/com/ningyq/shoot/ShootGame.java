@@ -103,8 +103,10 @@ public class ShootGame extends JPanel {
         switch (state) {
             case START:
                 g.drawImage(start,0,0,null);
+                break;
             case PAUSE:
                 g.drawImage(pause,0,0,null);
+                break;
             case GAME_OVER:
                 g.drawImage(gameover,0,0,null);
                 break;
