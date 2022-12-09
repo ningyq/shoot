@@ -8,15 +8,16 @@ import java.util.Random;
 public class Airplane extends FlyingObject implements Enemy {
     private int speed = 2;
 
-    /**初始化数据*/
+    /**
+     * 初始化数据
+     */
     public Airplane() {
-        this.image = ShootGame.airplane;
+        this.image = ShootGame.bufferedImageMap.get(this.getClazz());
         width = image.getWidth();
         height = image.getHeight();
         y = -height;
         Random rand = new Random();
         x = rand.nextInt(ShootGame.WIDTH - width);
-
     }
 
     public int getScore() {
@@ -24,12 +25,12 @@ public class Airplane extends FlyingObject implements Enemy {
     }
 
     @Override
-    public void step() {  //移动
+    public void step() {  // 移动
         y += speed;
     }
 
     @Override
-    public boolean outOFBounds() {   //越界处理
+    public boolean outOfBounds() {   // 越界处理
         return y > ShootGame.HEIGHT;
     }
 }
